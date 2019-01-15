@@ -1,0 +1,22 @@
+gitParams:
+    - name:          bitbucket_test
+      username:      xxxxxxxx
+      password:      xxxxxxxx    
+      repository:    your_public_repository
+      tag:           latest
+      host:          bitbucket.org
+
+    - name:          app-2-params 
+      username:      xxxxxxxx
+      password:      xxxxxxxx    
+      repository:    another_public_repository
+      tag:           latest
+      host:          github.com
+
+    - name:          app-3-params 
+      username:      xxxxxxxx
+      password:      xxxxxxxx    
+      repository:    yet_another_public_repostory
+      tag:           latest
+      host:          github.com
+     

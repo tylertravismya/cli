@@ -1,0 +1,8 @@
+{
+  // goFramework module configs
+  "goFramework": {
+    "dbConfig": {
+      "host": "goframework.realmethods.com"
+    }  
+  }
+}

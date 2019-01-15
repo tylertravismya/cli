@@ -1,0 +1,6 @@
+version:            1.0
+saveParams:
+    name:           Bowling UML
+    description:    UML Version of Model
+modelPath:          ./samples/models/
+modelFile:			foobar.uml

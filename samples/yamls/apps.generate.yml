@@ -1,0 +1,30 @@
+apps:
+    - techStackId:       Django                               # name of the technology stack
+      modelId:           1                                    # unique identifier of a registered model
+      appOptionsFile:    ./samples/options/django.json        # options to apply to the application
+      gitHubParams:      
+         entry:          bitbucket_tests                      # entry name of the following YAML file
+         file:           ./samples/github/demo.git.params.yml # A YAML file containing git
+      saveParams:
+         name:           Customer Care v0.01
+         description:    Initial version of a Django based application
+
+    - techStackId:       3                                    # unique identifier of a published tech stack
+      modelId:           2
+      appOptionsFile:    ./samples/options/aws.lambda.rdbms.options.json
+      gitHubParams:      
+         entry:          app-2-params
+         file:           ./samples/github/demo.git.params.yml
+      saveParams:
+         name:           Help Desk Services v0.01
+         description:    Initial version of a AWS Lambda server-less layer
+
+    - techStackId:       AWSLambdaRDS
+      modelId:           5
+      appOptionsFile:    ./samples/options/aws.lambda.nosql.options.json
+      gitHubParams:      
+         entry:          app-3-params
+         file:           ./samples/github/demo.git.params.yml
+      saveParams:
+         name:           Portfolio Services v0.01
+         description:    Initial version of a AWS Lambda server-less layer using MongoDB

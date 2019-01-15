@@ -1,0 +1,10 @@
+apps:
+    - techStackId:       18
+      modelId:           1
+      appOptionsFile:    ./samples/options/angular-options.json
+      gitParams:     
+         entry:          bitbucket_test
+         file:           ./samples/git/demo.git.params.yml
+      saveParams:
+         name:           Bowling App v0.01
+         description:    Sprint 1 version of Angular Mongo App using Bowling EMF Model
