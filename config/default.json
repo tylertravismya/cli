@@ -1,8 +1,8 @@
 {
-  // goFramework module configs
+  // module configs
   "realMethods": {
     "serverConfig": {
-      "host": "http://localhost", //http://18.235.138.220 or http://localhost
+      "host": "http://localhost",
       "port": 8080, // jetty:9900, tomcat:8080
       "endpoint": "/realMethods-7.1/service"
     },  
