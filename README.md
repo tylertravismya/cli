@@ -331,13 +331,13 @@ realmethods_cli stack_promote 24
 
 ### Application Commands
 
-#### Generate 1 or More Applications
+#### Generate an Application
 
 ```
-apps_generate <yaml_file>
+app_generate <yaml_file>
 ```
 
-Generates one or more applications using the directives of a YAML file. This YAML files allows the listing of
+Generates an application using the directives of a YAML file. This YAML files allows the listing of
 one ore more application directives including a model identifier, technology stack identifier, Git options and more.
 
 #### Example:
@@ -345,31 +345,8 @@ one ore more application directives including a model identifier, technology sta
 To generate multiple applications using the directives of a YAML file:
 
 ```
-realmethods_cli apps_generate ./sample.yamls/generate.apps.yml
+realmethods_cli app_generate ./sample.yamls/generate.apps.yml
 ```
-----------------------------
-
-#### Generate a Single Application
-
-```
-app_generate <stack_id> <model_id> <options_path>
-```
-
-Generate an application using the designated model, technology stack, and an application options file.
-
-In general, it is a convenience method.  Using the *apps_generate* command (see above) is a more robust means of generating
-one or more applications.
-
-#### Example:
-
-To generate an application using the technology stack with an id of 3,
-a model with an id of 1, and a JSON file containing the application options
-for the application:
-
-```
-realmethods_cli app_generate 3 1 ./sample.options/bowling.json
-```
-
 ----------------------------
 
 #### Download an Application

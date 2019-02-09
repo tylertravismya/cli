@@ -289,7 +289,10 @@ program
 .action(function(id){
 	realmethods.stackOptions(id)
 		.then(function(data){
-			console.log(data);
+			if ( program.quiet == 'true' )
+				console.log(data.result);
+			else
+				console.log(data);
 	}).catch(err => console.log(err));
 }).on('--help', function() {
     console.log('');
@@ -419,37 +422,19 @@ program
 ////////////////////////////////////////////////////
 
 program
-.command('app_generate <stack_id> <model_id> <options_path>')
-.description('Generate an app using the model id, tech stack (id, name, or short name), and an app options file.')
-.action(function(stack_id, model_id, app_options_path){
-	realmethods.generateApp(stack_id, model_id, app_options_path)
-		.then(function(data){
-			console.log(data);
-	}).catch(err => console.log(err));
-}).on('--help', function() {
-    console.log('');
-    console.log('Example to generate an app using tech stack id of 3, ');
-    console.log('a model id of 1, and a JSON file containing the application options ');
-    console.log('for the application:');
-    console.log('');
-    console.log('  $ realmethods_cli app_generate 3 1 ./sample.options/bowling.json');
-    console.log('');
-});
-
-program
-.command('apps_generate <yaml_file>')
-.description('Generates one or more apps using the directives of a YAML file.')
+.command('app_generate <yaml_file>')
+.description('Generates an app using the directives of a YAML file.')
 .action(function(yaml_file){
-	realmethods.generateApps(yaml_file)
+	realmethods.generateApp(yaml_file)
 		.then(function(data){
 			console.log(data);
 	}).catch(err => console.log(err)); 
 }).on('--help', function() {
     console.log('');
     console.log('');
-    console.log('Example to generate apps using the directives of a YAML file:');
+    console.log('Example to generate an app using the directives of a YAML file:');
     console.log('');
-    console.log('  $ realmethods_cli apps_generate ./sample.yamls/generate.apps.yml');
+    console.log('  $ realmethods_cli app_generate ./sample.yamls/generate.apps.yml');
     console.log('');
 });
 
