@@ -1,0 +1,10 @@
+app:
+    - techStackId:       GoogleFunctions
+      modelId:           4
+      appOptionsFile:    ./samples/options/remote/GoogleFunctions.options.json
+      gitParams:
+         entry:          Bitbucket_test_GoogleFunctions
+         file:           ./samples/git/test.git.yml
+      saveParams:
+         name:           Google Functions v0.0.1
+         description:    Google Functions Test Application Generation

@@ -1,0 +1,10 @@
+app:
+    - techStackId:       SparkMicroWeb
+      modelId:           4
+      appOptionsFile:    ./samples/options/remote/SparkMicroWeb.options.json
+      gitParams:
+         entry:          Bitbucket_test_SparkMicroWeb
+         file:           ./samples/git/test.git.yml
+      saveParams:
+         name:           Spark MicroWeb v0.0.1
+         description:    Spark MicroWeb Test Application Generation

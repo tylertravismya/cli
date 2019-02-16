@@ -1,0 +1,10 @@
+app:
+    - techStackId:       SpringMongoDB
+      modelId:           1
+      appOptionsFile:    ./samples/options/remote/SpringMongoDB.options.json
+      gitParams:
+         entry:          Bitbucket_test_SpringMongoDB
+         file:           ./samples/git/test.git.yml
+      saveParams:
+         name:           Spring Boot MongoDB v0.0.1
+         description:    Spring Boot MongoDB Test Application Generation

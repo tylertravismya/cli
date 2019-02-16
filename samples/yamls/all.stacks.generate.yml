@@ -1,0 +1,91 @@
+apps:
+    - techStackId:       ASPNETCore
+      modelId:           1
+      appOptionsFile:    ./samples/options/ASPNETCore.options.json
+      gitParams:
+         entry:          Bitbucket_test_ASPNETCore
+         file:           ./samples/git/test.git.yml
+      saveParams:
+         name:           ASPNETCore v0.0.1
+         description:    ASP.NET Core Test Application Generation
+    - techStackId:       LambdaNoSQL
+      modelId:           1
+      appOptionsFile:    ./samples/options/LambdaNoSQL.options.json
+      gitParams:
+         entry:          Bitbucket_test_LambdaNoSQL
+         file:           ./samples/git/test.git.yml
+      saveParams:
+         name:           LambdaNoSQL v0.0.1
+         description:    Lambda MongoDB Test Application Generation
+    - techStackId:       Lambda
+      modelId:           1
+      appOptionsFile:    ./samples/options/Lambda.options.json
+      gitParams:
+         entry:          Bitbucket_test_Lambda
+         file:           ./samples/git/test.git.yml
+      saveParams:
+         name:           Lambda v0.0.1
+         description:    Lambda Test Application Generation
+    - techStackId:       Angular7MongoDB
+      modelId:           1
+      appOptionsFile:    ./samples/options/Angular7MongoDB.options.json
+      gitParams:
+         entry:          Bitbucket_test_Angular7MongoDB
+         file:           ./samples/git/test.git.yml
+      saveParams:
+         name:           Angular7 v0.0.1
+         description:    Angular7 - MongoDB Test Application Generation
+    - techStackId:       Django
+      modelId:           1
+      appOptionsFile:    ./samples/options/Django.options.json
+      gitParams:
+         entry:          Bitbucket_test_Django
+         file:           ./samples/git/test.git.yml
+      saveParams:
+         name:           Django v0.0.1
+         description:    Django Test Application Generation
+    - techStackId:       GoogleFunctions
+      modelId:           1
+      appOptionsFile:    ./samples/options/GoogleFunctions.options.json
+      gitParams:
+         entry:          Bitbucket_test_GoogleFunctions
+         file:           ./samples/git/test.git.yml
+      saveParams:
+         name:           Google Functions v0.0.1
+         description:    Google Functions Test Application Generation
+    - techStackId:       SparkMicroWeb
+      modelId:           1
+      appOptionsFile:    ./samples/options/SparkMicroWeb.options.json
+      gitParams:
+         entry:          Bitbucket_test_SparkMicroWeb
+         file:           ./samples/git/test.git.yml
+      saveParams:
+         name:           Spark MicroWeb v0.0.1
+         description:    Spark MicroWeb Test Application Generation
+    - techStackId:       SpringCore
+      modelId:           1
+      appOptionsFile:    ./samples/options/SpringCore.options.json
+      gitParams:
+         entry:          Bitbucket_test_SpringCore
+         file:           ./samples/git/test.git.yml
+      saveParams:
+         name:           Spring Boot/Core v0.0.1
+         description:    Spring Boot/Core Hibernate Test Application Generation
+    - techStackId:       SpringMongoDB
+      modelId:           1
+      appOptionsFile:    ./samples/options/SpringMongoDB.options.json
+      gitParams:
+         entry:          Bitbucket_test_SpringMongoDB
+         file:           ./samples/git/test.git.yml
+      saveParams:
+         name:           Spring Boot MongoDB v0.0.1
+         description:    Spring Boot MongoDB Test Application Generation
+    - techStackId:       Struts2
+      modelId:           1
+      appOptionsFile:    ./samples/options/Struts2.options.json
+      gitParams:
+         entry:          Bitbucket_test_Struts2
+         file:           ./samples/git/test.git.yml
+      saveParams:
+         name:           Struts2 v0.0.1
+         description:    Struts2 Hibernate Test Application Generation

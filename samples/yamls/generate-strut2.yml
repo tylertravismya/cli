@@ -1,0 +1,10 @@
+app:
+    - techStackId:       Struts2
+      modelId:           ./samples/yamls/model.publish.yml
+      appOptionsFile:    ./samples/options/remote/Struts2.options.json
+      gitParams:
+         entry:          Bitbucket_test_Struts2
+         file:           ./samples/git/test.git.yml
+      saveParams:
+         name:           Struts2 v0.0.1
+         description:    Struts2 Hibernate Test Application Generation
