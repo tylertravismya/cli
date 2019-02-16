@@ -32,10 +32,10 @@
 		</packagedElement>
 		<packagedElement xmi:type="uml:Interface" xmi:id="_4YTUYFXUEd67zdnPfc5P6w" name="QuoteInf"/>
 		<packagedElement xmi:type="uml:Enumeration" xmi:id="_7GUWkFQjEd6_Wcl6sBLfgw" name="VisibilityKind">
-			<ownedLiteral xmi:id="__avZIFQjEd6_Wcl6sBLfgw" name="public"/>
-			<ownedLiteral xmi:id="_AYurYFQkEd6_Wcl6sBLfgw" name="private"/>
-			<ownedLiteral xmi:id="_A3lKkFQkEd6_Wcl6sBLfgw" name="protected"/>
-			<ownedLiteral xmi:id="_BomX0FQkEd6_Wcl6sBLfgw" name="package"/>
+			<ownedLiteral xmi:id="__avZIFQjEd6_Wcl6sBLfgw" name="__public"/>
+			<ownedLiteral xmi:id="_AYurYFQkEd6_Wcl6sBLfgw" name="__private"/>
+			<ownedLiteral xmi:id="_A3lKkFQkEd6_Wcl6sBLfgw" name="__protected"/>
+			<ownedLiteral xmi:id="_BomX0FQkEd6_Wcl6sBLfgw" name="__package"/>
 		</packagedElement>		
 	</uml:Model>
 </xmi:XMI>
