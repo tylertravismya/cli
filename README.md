@@ -337,12 +337,15 @@ realmethods_cli stack_promote 24
 app_generate <yaml_file>
 ```
 
-Generates an application using the directives of a YAML file. This YAML files allows the listing of
-one ore more application directives including a model identifier, technology stack identifier, Git options and more.
+Generates an application using the directives of a YAML file. 
+
+This YAML file allows the description of an application generation directive including a model identifier, technology stack identifier, Git options and more.
+
+A model identifier can be either a model YAML file or an ID of an already published model file.
 
 #### Example:
 
-To generate multiple applications using the directives of a YAML file:
+To generate an application using the directives of a YAML file:
 
 ```
 realmethods_cli app_generate ./sample.yamls/generate.apps.yml
