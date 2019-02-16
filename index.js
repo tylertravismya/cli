@@ -519,12 +519,16 @@ program
     									colWidths: [10, 30, 30, 30, 20]
     								});
     		var saveParams;
+    		var name;
     		for(var index = 0; index < archives.length; index++ ) {
-    			saveParams = JSON.parse(archives[index].saveParams);
+    			//console.log(archives[index]);
+    			name = JSON.parse(archives[index].saveParams).name;
+    			if ( name === undefined )
+    				name = "";
     			table.push( 
     						[
     							archives[index].id, 
-    							saveParams.name, 
+    							name, 
     							archives[index].dateTime,
     							archives[index].contributor,
     							archives[index].scopeType
@@ -545,15 +549,15 @@ program
     console.log('');
     console.log('Example to display all your public archived apps as json [default]:');
     console.log('');
-    console.log('  $ realmethods_cli list_app public');
+    console.log('  $ realmethods_cli app_list public');
     console.log('');
     console.log('Example to display all your apps using pretty print:');
     console.log('');
-    console.log('  $ realmethods_cli list_app -o pretty');
+    console.log('  $ realmethods_cli app_list -o pretty');
     console.log('');
     console.log('Example to display all community apps using pretty print:');
     console.log('');
-    console.log('  $ realmethods_cli list_app community -o pretty');
+    console.log('  $ realmethods_cli app_list community -o pretty');
     
 });
 
