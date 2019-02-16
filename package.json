@@ -1,6 +1,6 @@
 {
   "name": "realmethods_cli",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "realMethods CLI, generate fully functional serverless, RESTful APIs, and webapps. Choose from available community tech stacks and models, or use, and optinally contribute, your own.",
   "main": "index.js",
   "directories": {
