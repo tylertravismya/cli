@@ -1,6 +1,6 @@
 app:
     - techStackId:       Django
-      modelId:           1
+      modelId:           4
       appOptionsFile:    ./samples/options/remote/Django.options.json
       gitParams:
          entry:          Bitbucket_test_Django

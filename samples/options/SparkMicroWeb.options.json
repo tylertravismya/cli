@@ -32,7 +32,7 @@
 [{"name":"hibernate.connection.driver.class","value":"com.mysql.jdbc.Driver","required":"true"},
 {"name":"hibernate.connection.username","value":"root","required":"true"},
 {"name":"hibernate.connection.password","value":"letmein2","required":"true"},
-{"name":"hibernate.dialect","value":"org.hibernate.dialect.MySQLDialect","required":"true"},
+{"name":"hibernate.dialect","value":"org.hibernate.dialect.MySQL8Dialect","required":"true"},
 {"name":"hibernate.max.fetch.depth","value":"1","required":"false"},
 {"name":"hibernate.connection.url","value":"jdbc:mysql://localhost:3306/sparkmicrowebdemo?createDatabaseIfNotExist\u003dtrue","required":"false"}],
 "c3p0":[{"name":"hibernate.c3p0.min_size","value":"5","required":"false"},

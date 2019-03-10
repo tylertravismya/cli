@@ -1,0 +1,1 @@
+realmethods_cli app_generate ./samples/yamls/generate-angular.yml 

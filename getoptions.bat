@@ -1,0 +1,11 @@
+@call getoptionshelper ASPNETCore
+@call getoptionshelper LambdaNoSQL
+@call getoptionshelper Lambda
+@call getoptionshelper Angular7MongoDB
+@call getoptionshelper Django
+@call getoptionshelper GoogleFunctions
+@call getoptionshelper SparkMicroWeb
+@call getoptionshelper SpringCore
+@call getoptionshelper SpringMongoDB
+@call getoptionshelper Strut2NoSQL
+@call getoptionshelper Struts2

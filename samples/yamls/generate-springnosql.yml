@@ -1,6 +1,6 @@
 app:
     - techStackId:       SpringMongoDB
-      modelId:           1
+      modelId:           4
       appOptionsFile:    ./samples/options/remote/SpringMongoDB.options.json
       gitParams:
          entry:          Bitbucket_test_SpringMongoDB
