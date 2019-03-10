@@ -1,4 +1,6 @@
 realmethods_cli app_generate ./samples/yamls/generate-springnosql.yml & realmethods_cli app_generate ./samples/yamls/generate-springcore.yml & realmethods_cli app_generate ./samples/yamls/generate-lambdanosql.yml & realmethods_cli app_generate ./samples/yamls/generate-lambdacore.yml & realmethods_cli app_generate ./samples/yamls/generate-googlefunctions.yml & realmethods_cli app_generate ./samples/yamls/generate-sparkmicroweb.yml & realmethods_cli app_generate ./samples/yamls/generate-strut2.yml & realmethods_cli app_generate ./samples/yamls/generate-aspdotnet.yml & realmethods_cli app_generate ./samples/yamls/generate-django.yml 
 realmethods_cli app_generate ./samples/yamls/generate-angular.yml 
 
-realmethods_cli app_generate ./samples/yamls/generate-django.yml & realmethods_cli app_generate ./samples/yamls/generate-springnosql.yml & realmethods_cli app_generate ./samples/yamls/generate-lambdacore.yml 
+realmethods_cli app_generate ./samples/yamls/generate-django.yml & realmethods_cli app_generate ./samples/yamls/generate-springnosql.yml & realmethods_cli app_generate ./samples/yamls/generate-lambdacore.yml
+
+realmethods_cli app_generate ./samples/yamls/generate-springnosql.yml ./samples/git/test.git.yml ./samples/options/remote/SpringMongoDB.options.json 

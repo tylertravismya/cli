@@ -422,19 +422,24 @@ program
 ////////////////////////////////////////////////////
 
 program
-.command('app_generate <yaml_file>')
+.command('app_generate <yaml_file> [git_file] [app_options_file]')
 .description('Generates an app using the directives of a YAML file.')
-.action(function(yaml_file){
-	realmethods.generateApp(yaml_file)
+.action(function(yaml_file, git_file, app_options_file){
+	realmethods.generateApp(yaml_file, git_file, app_options_file)
 		.then(function(data){
 			console.log(data);
 	}).catch(err => console.log(err)); 
 }).on('--help', function() {
     console.log('');
     console.log('');
-    console.log('Example to generate an app using the directives of a YAML file:');
+    console.log('Example to generate an app using the directives of a YAML file, which include the git and app options file locations:');
     console.log('');
     console.log('  $ realmethods_cli app_generate ./sample.yamls/generate.apps.yml');
+    console.log('');
+    console.log('');
+    console.log('Example to generate an app using the directives of a YAML file, and the Git and app options files');
+    console.log('');
+    console.log('  $ realmethods_cli app_generate ./sample.yamls/generate.apps.yml ./samples/git/test.git.yml ./samples/options/remote/Angular7MongoDB.options.json ');
     console.log('');
 });
 
