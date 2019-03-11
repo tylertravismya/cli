@@ -20,8 +20,8 @@
 {"name":"licenseScopes","value":"compile,runtime","required":"false"},
 {"name":"violationRecipients","value":"","required":"false"}],
 "aws-lambda":
-[{"name":"accessKey","value":"AKIAIRDGJ54JPIGPPOEQ","required":"true"},
-{"name":"secretKey","value":"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","required":"true"},
+[{"name":"accessKey","value":"AKIAJDXEB4DQWOPIFV4A","required":"true"},
+{"name":"secretKey","value":"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","required":"true"},
 {"name":"s3Bucket","value":"realmethodsdemobucket","required":"true"},
 {"name":"region","value":"us-east-1","required":"true"},
 {"name":"runtime","value":"java8","required":"true"},

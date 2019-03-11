@@ -422,10 +422,13 @@ program
 ////////////////////////////////////////////////////
 
 program
-.command('app_generate <yaml_file> [git_file] [app_options_file]')
+.command('app_generate <yaml_file>')
 .description('Generates an app using the directives of a YAML file.')
-.action(function(yaml_file, git_file, app_options_file){
-	realmethods.generateApp(yaml_file, git_file, app_options_file)
+.option('-g, --gitFile [value]', 'Git settings in YAML file, overrides appOptionsFile setting in the generation YAML file')
+.option('-o, --optionsFile [value]', 'App options in JSON file, overrides gitParams setting in the generation YAML file')
+.option('-m, --modelIdentifier [value]', 'Either a model file or the id of a previously used/registered model, overrides modelId setting in the generation YAML file')
+.action(function(yaml_file, options){
+	realmethods.generateApp(yaml_file, options.gitFile, options.optionsFile, options.modelIdentifier)
 		.then(function(data){
 			console.log(data);
 	}).catch(err => console.log(err)); 
