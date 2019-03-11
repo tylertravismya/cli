@@ -440,9 +440,9 @@ program
     console.log('  $ realmethods_cli app_generate ./sample.yamls/generate.apps.yml');
     console.log('');
     console.log('');
-    console.log('Example to generate an app using the directives of a YAML file, and the Git and app options files');
+    console.log('Example to generate an app using the directives of a YAML file, the Git and app options files, and a model file');
     console.log('');
-    console.log('  $ realmethods_cli app_generate ./sample.yamls/generate.apps.yml ./samples/git/test.git.yml ./samples/options/remote/Angular7MongoDB.options.json ');
+    console.log('  $ realmethods_cli app_generate ./sample.yamls/generate.apps.yml -g ./samples/git/test.git.yml -o ./samples/options/remote/Angular7MongoDB.options.json -m samples/model/reference_management.xmi');
     console.log('');
 });
 
