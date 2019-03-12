@@ -1,5 +1,5 @@
 {"jfrog": 
-[{"name":"inUse","value":"true","required":"true"},
+[{"name":"inUse","value":"false","required":"true"},
 {"name":"serverUrl","value":"https://localhost:8081/artifactory","required":"true"},
 {"name":"userName","value":"tylertravismya","required":"true"},
 {"name":"password","value":"69cutlass","required":"true"},

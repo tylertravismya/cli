@@ -25,5 +25,5 @@
 [{"name":"connection.driver.class","value":"NHibernate.Driver.MySqlDataDriver","required":"true"},
 {"name":"connection.database","value":"test","required":"true"},
 {"name":"connection.username","value":"root","required":"true"},
-{"name":"connection.password","value":"letmein2","required":"true"},
+{"name":"connection.password","value":"6969Cutlass!!","required":"true"},
 {"name":"dialect","value":"NHibernate.Dialect.MySQLDialect","required":"true"}]}

@@ -10,7 +10,7 @@
 {"name":"url","value":"","required":"true"},
 {"name":"license","value":"","required":"true"}],
 "jfrog":
-[{"name":"inUse","value":"true","required":"true"},
+[{"name":"inUse","value":"false","required":"true"},
 {"name":"serverUrl","value":"https://cloudmigrate.jfrog.io/cloudmigrate","required":"true"},
 {"name":"userName","value":"admin","required":"true"},
 {"name":"password","value":"Ex3Mc5Ma7Lh8Fu","required":"true"},

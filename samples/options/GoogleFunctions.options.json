@@ -1,5 +1,5 @@
 {"jfrog":
-[{"name":"inUse","value":"true","required":"true"},
+[{"name":"inUse","value":"false","required":"true"},
 {"name":"serverUrl","value":"https://localhost:8081/artifactory","required":"true"},
 {"name":"userName","value":"tylertravismya","required":"true"},
 {"name":"password","value":"69cutlass","required":"true"},
@@ -57,7 +57,7 @@
 "hibernate":
 [{"name":"hibernate.connection.driver.class","value":"com.mysql.jdbc.Driver","required":"true"},
 {"name":"hibernate.connection.username","value":"root","required":"true"},
-{"name":"hibernate.connection.password","value":"letmein2","required":"true"},
+{"name":"hibernate.connection.password","value":"6969Cutlass!!","required":"true"},
 {"name":"hibernate.dialect","value":"org.hibernate.dialect.MySQL8Dialect","required":"true"},
 {"name":"hibernate.max.fetch.depth","value":"1","required":"false"},
 {"name":"hibernate.connection.url","value":"jdbc:mysql://35.238.135.228:3306/googlefuncsdemo?createDatabaseIfNotExist\u003dtrue","required":"false"}],
