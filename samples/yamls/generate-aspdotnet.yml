@@ -1,10 +1,10 @@
 app:
     - techStackId:       ASPNETCore
       modelId:           4
-      appOptionsFile:    ./samples/options/remote/ASPNETCore.options.json
+      appOptionsFile:    ./samples/options/ASPNETCore.options.json
       gitParams:
-         entry:          Bitbucket_test_ASPNETCore
-         file:           ./samples/git/test.git.yml
+         entry:          git_test_ASPNETCore
+         file:           ./samples/git/github.yml
       saveParams:
          name:           ASPNETCore v0.0.1
          description:    ASP.NET Core Test Application Generation

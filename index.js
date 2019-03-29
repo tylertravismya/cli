@@ -428,8 +428,12 @@ program
 .option('-o, --optionsFile [value]', 'App options in JSON file, overrides gitParams setting in the generation YAML file')
 .option('-m, --modelIdentifier [value]', 'Either a model file or the id of a previously used/registered model, overrides modelId setting in the generation YAML file')
 .action(function(yaml_file, options){
-	console.log( 'git file input arg is ' + options.gitFile);
-	realmethods.generateApp(yaml_file, options.gitFile, options.optionsFile, options.modelIdentifier)
+	
+	var gitFile = options.gitFile == undefined ? null : options.gitFile; 
+	var optionsFile = options.optionsFile == undefined ? null : options.optionsFile;
+	var modelIdentifier = options.modelIdentifier == undefined ? null : options.modelIdentifier;
+		
+	realmethods.generateApp(yaml_file, gitFile, optionsFile, modelIdentifier)
 		.then(function(data){
 			console.log(data);
 	}).catch(err => console.log(err)); 

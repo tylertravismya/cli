@@ -1,6 +1,7 @@
-version:            1.0
+version:             1.0
 saveParams:
-    name:           Bowling UML
-    description:    UML Version of Model
+    name:            Bowling UML
+    description:     UML Version of Model
 modelPath:          ./samples/models/
-modelFile:			foobar.uml
+modelFile:			 foobar.uml
+javaRootPackageName: if this model was a Java JAR file, this field would need to be set

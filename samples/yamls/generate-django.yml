@@ -1,10 +1,10 @@
 app:
     - techStackId:       Django
       modelId:           4
-      appOptionsFile:    ./samples/options/remote/Django.options.json
+      appOptionsFile:    ./samples/options/Django.options.json
       gitParams:
-         entry:          Bitbucket_test_Django
-         file:           ./samples/git/test.git.yml
+         entry:          git_test_Django
+         file:           ./samples/git/github.yml
       saveParams:
          name:           Django v0.0.1
          description:    Django Test Application Generation

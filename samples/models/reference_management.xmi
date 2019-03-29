@@ -166,7 +166,7 @@
           </UML:Classifier.feature>
         </UML:Class>
         <UML:Class xmi.id = '-64--88-2-2--31c5a07:145005988b1:-8000:0000000000000780'
-          name = 'Reference' visibility = 'public' isSpecification = 'false' isRoot = 'false'
+          name = 'TheReference' visibility = 'public' isSpecification = 'false' isRoot = 'false'
           isLeaf = 'false' isAbstract = 'false' isActive = 'false'>
           <UML:Classifier.feature>
             <UML:Attribute xmi.id = '-64--88-2-2--31c5a07:145005988b1:-8000:0000000000001220'
@@ -910,7 +910,7 @@
           </UML:Classifier.feature>
         </UML:Class>
         <UML:Class xmi.id = '-64--88-2-2--31c5a07:145005988b1:-8000:000000000000133A'
-          name = 'Response' visibility = 'public' isSpecification = 'false' isRoot = 'false'
+          name = 'TheResponse' visibility = 'public' isSpecification = 'false' isRoot = 'false'
           isLeaf = 'false' isAbstract = 'false' isActive = 'false'>
           <UML:Classifier.feature>
             <UML:Attribute xmi.id = '-64--88-2-2--31c5a07:145005988b1:-8000:000000000000133C'

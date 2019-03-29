@@ -1,10 +1,10 @@
 app:
     - techStackId:       SpringCore
       modelId:           4
-      appOptionsFile:    ./samples/options/remote/SpringCore.options.json
+      appOptionsFile:    ./samples/options/SpringCore.options.json
       gitParams:
-         entry:          Bitbucket_test_SpringCore
-         file:           ./samples/git/test.git.yml
+         entry:          git_test_SpringCore
+         file:           ./samples/git/github.yml
       saveParams:
          name:           Spring Boot/Core v0.0.1
          description:    Spring Boot/Core Hibernate Test Application Generation
