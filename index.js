@@ -343,7 +343,7 @@ program
 
 program
 .command('stack_download <stack_id> <output_file_path>')
-.description('Download a tech stack as a ZIP file.  Only owned or public apps can be downloaded.' )
+.description('Download a tech stack as a ZIP file.  Only owned or public stacks can be downloaded.' )
 .action(function(app_id, output_file_path){
 	realmethods.downloadStack(app_id, output_file_path)
 		.then(function(data){
