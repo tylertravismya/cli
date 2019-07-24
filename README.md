@@ -111,9 +111,7 @@ realmethods_cli model_validate ./models/myuml.xmi
 model_publish <yaml_file> [scope]
 ```
 
-Publish a model to make it available to others (public) and during application generation.
-
-Publish a model using YAML directives. Scope: public or private[default].
+Publish a model file or use a YAML with appropriate directives. Scope: public or private[default].
 
 #### Example:
 

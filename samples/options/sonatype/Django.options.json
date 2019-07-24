@@ -3,8 +3,12 @@
 {"name":"provider","value":"aws"},
 {"name":"region","value":"us-east-1"},
 {"name":"ssh-fingerprint","value":"50:36:21:3f:3e:fd:de:fc:2f:1f:17:a6:09:6d:1b:dd"},
-{"name":"aws-key-pair-name","value":"my-public-key"}.
-{"name":"docker-username","value":"realmethods"},
+{"name":"aws-key-pair-name","value":"my-public-key"},
+{"name":"aws-vpc","value":"vpc-c422e2a0"},
+{"name":"aws-ec2-instance-type","value":"t2.micro"},
+{"name":"docker-username","value":"tylertravismya"},
+{"name":"docker-password","value":"69cutlass"},
+{"name":"docker-org-name","value":"realmethods"},
 {"name":"docker-repo","value":"djangodemo"},
 {"name":"docker-tag","value":"latest"}],
 "application":
@@ -17,17 +21,14 @@
 {"name":"version","value":"0.0.1"},
 {"name":"email","value":"dev@realmethods.com"},
 {"name":"url","value":""},
-{"name":"cicd_platform","value":"bitbucket","required":"true"},
-{"name":"license","value":""}],
-"jfrog":
-[{"name":"inUse","value":"false"},
-{"name":"serverUrl","value":"https://cloudmigrate.jfrog.io/cloudmigrate"},
+{"name":"license","value":""},
+{"name":"cicd_platform","value":"circleci"}],
+"nexus":
+[{"name":"inUse","value":"true"},
 {"name":"userName","value":"admin"},
-{"name":"password","value":"Ex3Mc5Ma7Lh8Fu"},
+{"name":"password","value":"letmein2"},
 {"name":"email","value":"srandolph6969@gmail.com"},
-{"name":"publishRepoKey","value":"local-pypi-repo"},
-{"name":"pluginRepoKey","value":"remote-pypi-repo"},
-{"name":"snapshotRepoKey","value":"libs-snapshot-local"}],
+{"name":"repoUrl","value":"http://18.235.138.220:8081/repository/pypi-simple/"}],
 "Heroku":
 [{"name":"auto deploy","value":"true"},
 {"name":"app name","value":"demo"}]}

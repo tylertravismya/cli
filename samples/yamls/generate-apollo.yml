@@ -1,0 +1,10 @@
+app:
+    - techStackId:       Apollo
+      modelId:           4
+      appOptionsFile:    ./samples/options/Angular7MongoDB.options.json
+      gitParams:
+         entry:          git_test_Angular7MongoDB
+         file:           ./samples/git/github.yml
+      saveParams:
+         name:           Apollo v0.0.1
+         description:    Apollo Test Application Generation

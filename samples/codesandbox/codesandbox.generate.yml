@@ -1,0 +1,10 @@
+app:
+    - techStackId:       Angular7               # do not remove or change
+      modelId:                                  # ignored when the model identifier is provided via input argument
+      appOptionsFile:                           # ignored when the options JSON file is provide via input argument
+      gitParams:
+         entry:          codesandbox_git_params # do not remove or change
+         file:                                  # ignored when the Git parameters YAML file is provided via input argument
+      saveParams:
+         name:           Angular7 v0.0.1        # overridden by application options name field
+         description:    Angular7 Application   # overridden by application options description field

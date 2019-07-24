@@ -1,4 +1,11 @@
 gitParams:
+    - name:          git_test_Django
+      username:      complexmathguy
+      password:      6969Cutlass!!
+      repository:    Django
+      tag:           latest
+      host:          github.com
+
     - name:          git_test_ASPNETCore
       username:      complexmathguy
       password:      6969Cutlass!!
@@ -23,14 +30,7 @@ gitParams:
     - name:          git_test_Angular7MongoDB
       username:      complexmathguy
       password:      6969Cutlass!!
-      repository:    Angular7MongoDB
-      tag:           latest
-      host:          github.com
-
-    - name:          git_test_Django
-      username:      complexmathguy
-      password:      6969Cutlass!!
-      repository:    Django
+      repository:    AngularDemo
       tag:           latest
       host:          github.com
 

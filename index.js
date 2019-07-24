@@ -27,9 +27,11 @@ program
 .option('-q, --quiet <arg>', 'true or [false] to minimize output to only results.');
 
 program
-.command('init [token]')
-.description('Must run first to initialize the realMethods. If you do not provide a token, you will be prompted for one')
-.action(async function(token){
+.command('init [token] [hostUrl]')
+.description('Must run first to initialize the realMethods. If you do not provide a token, you will be prompted for one.  ' + 
+		'If the hostUrl is not provided, your service request will be redirected to the realMethods SaaS Platform. ' +
+		'Host Url takes the form http://<host_name>:<port>/realmethods/service.')
+.action(async function(token, hostUrl){
 	console.log( chalk.blue(
 		    figlet.textSync('realMethods', { horizontalLayout: 'default', verticalLayout: "default" })
 		)
@@ -40,11 +42,12 @@ program
 		theToken = token;
 	}
 	else {
-		token = await inquirer.askCredentials();		// ask for the token
-		theToken = token.tokenInput;
+		var input = await inquirer.askCredentials();		// ask for the token and host Url
+		theToken = input.tokenInput;
+		hostUrl = input.hostUrl;
 	}
 
-	realmethods.authenticate(theToken)
+	realmethods.authenticate(theToken, hostUrl)
 			.then(function(result) {
 				console.log( result );
 			}).catch(err => console.log(err));
@@ -146,10 +149,10 @@ program
 });
 
 program
-.command('model_publish <yaml_file> [scope]')
-.description('Publish a model using a YAML directives. Scope: public or private[default].')
-.action(function(yaml_file, scope){
-	realmethods.registerModel(yaml_file, scope)
+.command('model_publish <model_or_yaml_file> [scope]')
+.description('Publish a model file or use a YAML with appropriate directives. Scope: public or private[default].')
+.action(function(model_or_yaml_file, scope){
+	realmethods.registerModel(model_or_yaml_file, scope)
 		.then(function(data) {
 			console.log(data);
 		}).catch(err => console.log(err));

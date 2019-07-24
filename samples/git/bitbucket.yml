@@ -23,12 +23,12 @@ gitParams:
     - name:          git_test_Angular7MongoDB
       username:      realmethods-public
       password:      6969Cutlass!!
-      repository:    Angular7MongoDB
+      repository:    Angular
       tag:           latest
       host:          bitbucket.org
 
     - name:          git_test_Django
-      username:      realmethods-public
+      username:      tylertravismya
       password:      6969Cutlass!!
       repository:    Django
       tag:           latest
@@ -75,4 +75,3 @@ gitParams:
       repository:    Struts2
       tag:           latest
       host:          bitbucket.org
-

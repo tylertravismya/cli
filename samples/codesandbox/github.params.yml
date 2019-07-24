@@ -1,0 +1,7 @@
+gitParams:
+    - name:          codesandbox_git_params  # do not remove or delete
+      username:                              # apply GitHub user name 
+      password:                              # apply GitHub password
+      repository:                            # apply user provided repository name
+      tag:           latest                  # apply user provide tag, but default of latest is ok
+      host:          github.com              # do not remove or delete until CodeSandbox supports other Git repositories
