@@ -16,7 +16,7 @@
 "kubernetes":
 [{"name":"inUse","value":"true"},
 {"name":"host","value":"https://146.148.32.34"},
-{"name":"project","value":"sharp-footing-218200"},
+{"name":"project","value":"realmethods-projects"},
 {"name":"region","value":"us-central1-a"},
 {"name":"hostTarget","value":"google"},
 {"name":"username","value":"admin"},
