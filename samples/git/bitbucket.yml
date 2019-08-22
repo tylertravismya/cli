@@ -21,9 +21,9 @@ gitParams:
       host:          bitbucket.org
 
     - name:          git_test_Angular7MongoDB
-      username:      realmethods-public
+      username:      tylertravismya
       password:      6969Cutlass!!
-      repository:    Angular
+      repository:    AngularAlpha
       tag:           latest
       host:          bitbucket.org
 

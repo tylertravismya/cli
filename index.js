@@ -29,7 +29,7 @@ program
 program
 .command('init [token] [hostUrl]')
 .description('Must run first to initialize the realMethods. If you do not provide a token, you will be prompted for one.  ' + 
-		'If the hostUrl is not provided, your service request will be redirected to the realMethods SaaS Platform. ' +
+		'If the hostUrl is not provided, your service request will be redirected to the realMethods Community Instance. ' +
 		'Host Url takes the form http://<host_name>:<port>/realmethods/service.')
 .action(async function(token, hostUrl){
 	console.log( chalk.blue(

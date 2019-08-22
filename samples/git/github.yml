@@ -28,9 +28,9 @@ gitParams:
       host:          github.com
 
     - name:          git_test_Angular7MongoDB
-      username:      complexmathguy
+      username:      realmethods-public
       password:      6969Cutlass!!
-      repository:    AngularDemo
+      repository:    Angular
       tag:           latest
       host:          github.com
 
