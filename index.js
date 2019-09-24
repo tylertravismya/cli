@@ -443,12 +443,12 @@ program
 }).on('--help', function() {
     console.log('');
     console.log('');
-    console.log('Example to generate an app using the directives of a YAML file, which include the git and app options file locations:');
+    console.log('Example to generate an app using the directives of a YAML file:');
     console.log('');
     console.log('  $ realmethods_cli app_generate ./sample.yamls/generate.apps.yml');
     console.log('');
     console.log('');
-    console.log('Example to generate an app using the directives of a YAML file, the Git and app options files, and a model file');
+    console.log('Example to generate an app using the directives of a YAML file while directly assigning the Git and app options files, and a model file');
     console.log('');
     console.log('  $ realmethods_cli app_generate ./sample.yamls/generate.apps.yml -g ./samples/git/test.git.yml -o ./samples/options/remote/Angular7MongoDB.options.json -m samples/model/reference_management.xmi');
     console.log('');

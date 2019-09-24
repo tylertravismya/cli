@@ -23,7 +23,7 @@ gitParams:
     - name:          git_test_Angular7MongoDB
       username:      tylertravismya
       password:      6969Cutlass!!
-      repository:    AngularAlpha
+      repository:    AngularForNutanix
       tag:           latest
       host:          bitbucket.org
 
