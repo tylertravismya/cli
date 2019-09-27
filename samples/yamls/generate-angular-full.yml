@@ -19,7 +19,7 @@ app:
                                            #     realmethods_cli stack_list --output pretty
 
     model:
-       identifier:		  4			  # options:     Unique id of an existing model or 
+       identifier:		  4           # options:     Unique id of an existing model or 
                                       #              full or relative path to a model file of a supported type
                                       # model types: UML, Eclipse Modeling Framework, JSON, SQL Script, JAR, EAR
                                       # To see the list of available model on a realMethods instance using command:
@@ -48,9 +48,9 @@ app:
 # Docker parameters
 #            
         docker:
-            username:     xxxxxxxxxxxx
+            userName:     xxxxxxxxxxxx
             password:     xxxxxxxxxxxx
-            org-name:     realmethods
+            orgName:      realmethods
             repo:         angular7demo
             tag:          latest
              
@@ -81,7 +81,7 @@ app:
 #
         terraform:
             inUse:             true	
-            provider:          aws        # options: aws, google, azure, nutanix
+            provider:          nutanix        # options: aws, google, azure, nutanix
             region:            us-east-1  # options: any cloud provider region
             ssh-fingerprint:   50:36:21:3f:3e:fd:de:fc:2f:1f:17:a6:09:6d:1b:dd
             
@@ -119,11 +119,11 @@ app:
 #                        will be provisioned on the provider
 #
         kubernetes:
-            inUse:              false
+            inUse:              true
             host:               https://146.148.32.34
             project:            sharp-footing-218200
             region:             us-central1-a      # options: any provider region
-            hostTarget:         google             # option: google, aws, azure
+            hostTarget:         nutanix            # option: google, aws, azure, nutanix
             username:           admin
             password:           5UhfcIPAPsiPXklT
             exposeAsService:    true
