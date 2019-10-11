@@ -24,6 +24,9 @@ app:
                                       # model types: UML, Eclipse Modeling Framework, JSON, SQL Script, JAR, EAR
                                       # To see the list of available model on a realMethods instance using command:
                                       #      realmethods_cli model_list --output pretty
+                                      #
+                                      # If using a JAR/EAR file not already published, must include the package name
+#      javaRootPackageName:   com.acme.pojo                                      
         	
 #
 # DevOps Project Creation Options

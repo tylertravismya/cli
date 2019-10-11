@@ -130,8 +130,8 @@ program
 
 
 program
-.command('model_validate <filepath>')
-.description('Validate a model for possible usage later on.')
+.command('model_validate <filepath> [javaRootPackageName]')
+.description('Validate a model for possible usage later on. javaRootPackageName: required for JAR/EAR files')
 .action(function(filepath){
 	realmethods.validateModel(filepath)
 		.then(function(data) {
@@ -149,10 +149,10 @@ program
 });
 
 program
-.command('model_publish <model_or_yaml_file> [scope]')
-.description('Publish a model file or use a YAML with appropriate directives. Scope: public or private[default].')
+.command('model_publish <model_or_yaml_file> [scope] [javaRootPackageName]')
+.description('Publish a model file or use a YAML with appropriate directives. Scope: public or private[default]. javaRootPackageName: For JAR/EAR files only' )
 .action(function(model_or_yaml_file, scope){
-	realmethods.registerModel(model_or_yaml_file, scope)
+	realmethods.registerModel(model_or_yaml_file, scope, javaRootPackageName)
 		.then(function(data) {
 			console.log(data);
 		}).catch(err => console.log(err));

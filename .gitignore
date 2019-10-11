@@ -2,3 +2,5 @@ node_modules/
 .svn/
 .project
 *.bat
+samples/yamls/project.as.code/test-*.yml
+samples/codesandbox/

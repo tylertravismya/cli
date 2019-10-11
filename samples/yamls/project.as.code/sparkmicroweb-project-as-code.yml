@@ -10,6 +10,8 @@
 # For Git, before generating the project be sure to create the 
 # repository and designate as public before
 #
+# Minimally, anywhere you see an xxx, replace with your relevant value
+#
 
 app:
     techstack:
@@ -24,6 +26,9 @@ app:
                                       # model types: UML, Eclipse Modeling Framework, JSON, SQL Script, JAR, EAR
                                       # To see the list of available model on a realMethods instance using command:
                                       #      realmethods_cli model_list --output pretty
+                                      #
+                                      # If using a JAR/EAR file not already published, must include the package name
+#      javaRootPackageName:   com.acme.pojo                                      
         	
 #
 # DevOps Project Creation Options
@@ -70,8 +75,8 @@ app:
 #
         git:            
             name:        git_test_SparkMicroWeb				# an arbitrary name
-            username:    tylertravismya
-            password:    6969Cutlass!!
+            username:    xxxx
+            password:    xxxx
             repository:  SparkMicroWeb
             tag:         latest
             host:		 bitbucket.org            
@@ -148,8 +153,8 @@ app:
 #
         hibernate:
             hibernate.connection.driver.class:    com.mysql.jdbc.Driver
-            hibernate.connection.username:        root
-            hibernate.connection.password:        6969Cutlass!!
+            hibernate.connection.username:        xxxx
+            hibernate.connection.password:        xxxx
             hibernate.dialect:                    org.hibernate.dialect.MySQL8Dialect
             hibernate.max.fetch.depth:            1
             hibernate.connection.url:             jdbc:mysql://localhost:3306/lambdademo?createDatabaseIfNotExist\u003dtrue #do no remove the createDatabaseIfNotExist\u003dtrue 
