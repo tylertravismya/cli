@@ -64,7 +64,7 @@ app:
 # CI/CD parameters
 #            
         cicd:
-            platform:  codeship    # options: codeship, circleci, 
+            platform:  circleci    # options: codeship, circleci, 
                                    # jenkins, azure, aws, gitlab, 
                                    # bitbucket, buddy, semaphore
             AES key:               # codeship project key; ex: XKyy2IDcSptIIvMY8KLMVMcxVs+ZK6AyNu1B4Wu1DPY=

@@ -85,21 +85,39 @@ app:
             key-pair-name:     xxxxxxxxxxx
             access-key:        ASSIGN__ON_CICD_PLATFORM_AS_ENV_VARS
             secret-key:        ASSIGN__ON_CICD_PLATFORM_AS_ENV_VARS
-			s3Bucket:          realmethodsdemobucket
-			region:            us-east-1
-			runtime:           java8				# options: java8,nodejs6.10,nodejs8.10
-			useKinesis:        false
-			kinesisStreamName: xxxxxxxxxx			# use with caution since billing charge will incur
-			lambdaRoleArn:     xxxxxxxxxx           # ex: arn:aws:iam::xxxxxxxxxxx:role/service-role/myRoleName
-			timeout:           30
-			memorySize:        512
-			forceUpdate:       true
-			publish:           true
-			vpcSubnetIds: 
-			vpcSecurityGroupIds: 
-			delegateDAOHost: 
-			delegateDAOPort: 
+            s3Bucket:          mys3bucket
+            region:            us-east-1
+            runtime:           java8				# options: java8,nodejs6.10,nodejs8.10
+            useKinesis:        false
+            kinesisStreamName: xxxxxxxxxx			# use with caution since billing charge will incur
+            lambdaRoleArn:     xxxxxxxxxx           # ex: arn:aws:iam::xxxxxxxxxxx:role/service-role/myRoleName
+            timeout:           30
+            memorySize:        512
+            forceUpdate:       true
+            publish:           true
+            vpcSubnetIds:
+            vpcSecurityGroupIds: 
+            delegateDAOHost:
+            delegateDAOPort:
 			
+
+#            
+# Swagger parameters - see https://swagger.io/docs/specification/2-0/basic-structure/ for valid options   
+#
+            
+        swagger:
+            host:              
+            basepath:           /
+            contactName:       realMethods Dev
+            contactEmail:      dev@realmethods.com
+            contactUrl:
+            licenseUrl:        http://www.apache.org/licenses/LICENSE-2.0.html
+            licenseName:       Apache 2.0
+            title:              Lambda Functions Swagger
+            version:            v1.0
+            description:        Swagger file for Lambda Functions
+            termsOfService:
+            outputFormats:     json
             
 #
 # Nutanix parameters
@@ -164,20 +182,3 @@ app:
             mongooseHost:            http://localhost
             mongoosePort:            4000        
       
-#            
-# Swagger parameters - see https://swagger.io/docs/specification/2-0/basic-structure/ for valid options   
-#
-            
-        swagger:
-            host:              
-            basepath:           /
-            contact name:       realMethods Dev
-            contact email:      dev@realmethods.com
-            contact url:
-            license url:        http://www.apache.org/licenses/LICENSE-2.0.html
-            license name:       Apache 2.0
-            title:              Lambda Functions Swagger
-            version:            v1.0
-            description:        Swagger file for Lambda Functions
-            terms of service:
-            output formats:     json
