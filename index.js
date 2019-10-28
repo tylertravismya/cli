@@ -29,8 +29,9 @@ program
 program
 .command('init [token] [hostUrl]')
 .description('Must run first to initialize the realMethods. If you do not provide a token, you will be prompted for one.  ' + 
-		'If the hostUrl is not provided, your service request will be redirected to the realMethods Community Instance. ' +
-		'Host Url takes the form http://<host_name>:<port>/realmethods/service.')
+		'If the hostUrl is not provided, your service request will be redirected to the realMethods SaaS Instance. ' +
+		'If using a realMethods Community instance, the Host Url takes the form http://<host_name>:<port>. ' +
+		'The Url is easiest verified in your browser.')
 .action(async function(token, hostUrl){
 	console.log( chalk.blue(
 		    figlet.textSync('realMethods', { horizontalLayout: 'default', verticalLayout: "default" })
@@ -44,7 +45,8 @@ program
 	else {
 		var input = await inquirer.askCredentials();		// ask for the token and host Url
 		theToken = input.tokenInput;
-		hostUrl = input.hostUrl;
+		if ( input.hostUrl != null && input.hostUrl != undefined && input.hostUrl.length != 0 )
+			hostUrl = input.hostUrl + '/service';
 	}
 
 	realmethods.authenticate(theToken, hostUrl)
