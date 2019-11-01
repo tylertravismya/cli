@@ -13,7 +13,7 @@
 # Minimally, anywhere you see an xxx, replace with your relevant value
 #
 
-app:
+project:
     techstack:
        id:                GoogleFunctions   # options: ASPNETCore, LambdaNoSQL, Lambda, Angular7MongoDB, Django, GoogleFunctions
                                             #          SparkMicroWeb, SpringCore, SpringMongoDB, Struts2, Apollo

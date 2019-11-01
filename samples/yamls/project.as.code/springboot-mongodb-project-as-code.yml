@@ -11,7 +11,7 @@
 # repository and designate as public before
 #
 
-app:
+project:
     techstack:
        id:                Angular7MongoDB  # options: ASPNETCore, LambdaNoSQL, Lambda, Angular7MongoDB, Django, GoogleFunctions
                                            #          SparkMicroWeb, SpringCore, SpringMongoDB, Struts2, Apollo
