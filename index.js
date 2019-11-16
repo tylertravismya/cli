@@ -86,7 +86,7 @@ program
 .command('model_list [scope]')
 .description('List available models. Scope: public, private, community. Empty returns all.')
 .option('-o, --output [value]', '[json] or pretty for pretty print')
-.option('-f, --filter [value]', 'emf, sqlscript, uml, xmi, pojo, json')
+.option('-f, --filter [value]', 'emf, sqlscript, uml, xmi, pojo, yaml, or json')
 .action(function(scope, options){
 	realmethods.listModels(scope, options.filter)
 		.then(function(data) {
