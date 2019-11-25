@@ -1,7 +1,7 @@
 entities:
     - name: "Company"
       data:
-          - name: "ACME Exterminator"
+          - name: "name"
           - name: "type"
             type: "CompanyType"
       relations:
@@ -10,6 +10,7 @@ entities:
             multiplicity: "OneToMany"
           - name: "address"
             type: "Address"
+            multiplicity: "OneToOne"
     - name: "Employee"
       data:
           - name: "firstName"
@@ -23,9 +24,9 @@ entities:
 enums:
     - name: "CompanyType"
       data:
-          - name: "S-Corp"
+          - name: "S_Corp"
           - name: "LLC"
-          - name: "C-Corp"
+          - name: "C_Corp"
 #containers:
 #    - name: "MyContainer"
 #      host: "localhost"

@@ -4,3 +4,5 @@ node_modules/
 *.bat
 samples/yamls/project.as.code/test-*.yml
 samples/codesandbox/
+samples/account.json
+

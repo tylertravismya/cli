@@ -23,7 +23,7 @@ const Table   			= require('cli-table')
 var program = require('commander');
 
 program
-.version('0.1.7', '-v, --version')
+.version('0.2.13', '-v, --version')
 .option('-q, --quiet <arg>', 'true or [false] to minimize output to only results.');
 
 program
@@ -181,19 +181,19 @@ program
 		}).catch(err => console.log(err));
 }).on('--help', function() {
     console.log('');
-    console.log('Example to download an delete:');
+    console.log('Example to download a model with id of 2:');
     console.log('');
     console.log('  $ realmethods_cli model_download 2 ./tmp/archive/mymodel.xmi');
     
 });
 
 program
-.command('model_promote <id>')
+.command('model_promote <name_or_id>')
 .description('Promote an owned model from private scope to public.')
-.action(async function(id){
+.action(async function(name_or_id){
 	var confirm = await inquirer.confirmation();		// ask for confirmation;
 	if ( confirm.query == true )
-		realmethods.promoteModel(id)
+		realmethods.promoteModel(name_or_id)
 			.then(function(data){
 				console.log(data);
 		}).catch(err => console.log(err));
@@ -205,12 +205,12 @@ program
 });
 
 program
-.command('model_demote <id>')
+.command('model_demote <name_or_id>')
 .description('Demote an owned model from public scope to private.')
-.action(async function(id){
+.action(async function(name_or_id){
 	var confirm = await inquirer.confirmation();		// ask for confirmation;
 	if ( confirm.query == true )
-		realmethods.demoteModel(id)
+		realmethods.demoteModel(name_or_id)
 			.then(function(data){
 				console.log(data);
 			}).catch(err => console.log(err));
@@ -222,12 +222,12 @@ program
 });
 
 program
-.command('model_delete <id>')
+.command('model_delete <name_or_id>')
 .description('Delete a model.  Can only delete an owned private model.')
-.action(async function(id){
+.action(async function(name_or_id){
 	var confirm = await inquirer.confirmation();		// ask for confirmation;
 	if ( confirm.query == true )
-		realmethods.deleteModel(id)
+		realmethods.deleteModel(name_or_id)
 			.then(function(data){
 				console.log(data);
 			}).catch(err => console.log(err));				
@@ -289,10 +289,10 @@ program
 });
 
 program
-.command('stack_options <id>')
+.command('stack_options <name_or_id>')
 .description('Available stack application options, modifiable to allow customization of a generated app.')
-.action(function(id){
-	realmethods.stackOptions(id)
+.action(function(name_or_id){
+	realmethods.stackOptions(name_or_id)
 		.then(function(data){
 			if ( program.quiet == 'true' )
 				console.log(data.result);
@@ -365,12 +365,12 @@ program
 
 
 program
-.command('stack_promote <id>')
+.command('stack_promote <name_or_id>')
 .description('Promote an owned tech stack from private scope to public.')
-.action(async function(id){
+.action(async function(name_or_id){
 	var confirm = await inquirer.confirmation();		// ask for confirmation;
 	if ( confirm.query == true ) {
-		realmethods.promoteStack(id)
+		realmethods.promoteStack(name_or_id)
 			.then(function(data){
 				console.log(data);
 		}).catch(err => console.log(err));
@@ -385,12 +385,12 @@ program
 
 
 program
-.command('stack_demote <id>')
+.command('stack_demote <name_or_id>')
 .description('Demote an owned tech stack from public scope to private.')
-.action(async function(id){
+.action(async function(name_or_id){
 	var confirm = await inquirer.confirmation();		// ask for confirmation;
 	if ( confirm.query == true ) {
-		realmethods.demoteStack(id)
+		realmethods.demoteStack(name_or_id)
 			.then(function(data){
 				console.log(data);
 		}).catch(err => console.log(err));
@@ -404,12 +404,12 @@ program
 });
 
 program
-.command('stack_delete <id>')
+.command('stack_delete <name_or_id>')
 .description('Delete a tech stack.  Can only delete an owned private tech stack.')
-.action(async function(id){
+.action(async function(name_or_id){
 	var confirm = await inquirer.confirmation();		// ask for confirmation;
 	if ( confirm.confirm == true ) {
-		realmethods.deleteStack(id)
+		realmethods.deleteStack(name_or_id)
 			.then(function(data){
 				console.log(data);
 		}).catch(err => console.log(err));
@@ -421,6 +421,145 @@ program
     console.log('  $ realmethods_cli stack_delete 256');    
 });
 
+////////////////////////////////////////////////////
+// resource related options
+////////////////////////////////////////////////////
+
+program
+.command('resource_list [scope]')
+.description('List available resources. Scope: public, private, community. Empty returns all.')
+.option('-o, --output [value]', '[json] or pretty for pretty print')
+.option('-t, --type [value]', 'GENERIC, DOCKERFILE, CI_CONFIG, TERRAFORM')
+.action(function(scope, options){
+	realmethods.listResources(scope, options.type)
+		.then(function(data) {
+			var models = JSON.parse(data.result);
+			if ( options.output == constants.PRETTY_PRINT_OUTPUT) {
+				const tbl 		= new Table({
+											head: ['id', 'name', 'description', 'contributor', 'type', 'scope'], 
+											colWidths: [10, 30, 30, 25, 15, 15]
+										});
+				var saveParams;
+				for(var index = 0; index < models.length; index++ ) {
+					saveParams = JSON.parse(models[index].saveParams);
+						tbl.push( 
+								[
+									models[index].id, 
+									saveParams.name, 
+									saveParams.description, 
+									models[index].contributor,
+									models[index].resourceType,
+									models[index].scopeType
+								]);
+				}
+				console.log(tbl.toString());
+			}
+			else {
+					console.log(models);
+			} 
+	}).catch(err => console.log(err));
+	
+}).on('--help', function() {
+    console.log('');
+    console.log('Example to display all public resources using pretty print:');
+    console.log('');
+    console.log('  $ realmethods_cli resource_list public --output pretty');
+    console.log('');
+    console.log('Example to display all your public and private list as json [default]:');
+    console.log('');
+    console.log('  $ realmethods_cli resource_list');
+    console.log('Example to display all community Dockerfile resources as json :');
+    console.log('');
+    console.log('  $ realmethods_cli resource_list community -f DOCKEFILE');    
+});
+
+program
+.command('resource_publish <resource_file> <unique_name> [type] [scope]')
+.description('Publish a resource file. type: DOCKERFILE, CI_CONFIG, TERRAFORM, GENERIC; scope: public or private[default].' )
+.action(function(resource_file, unique_name, type, scope){
+	realmethods.registerResource(resource_file, unique_name, type, scope)
+		.then(function(data) {
+			console.log(data);
+		}).catch(err => console.log(err));
+}).on('--help', function() {
+    console.log('');
+    console.log('Example to publish a resource as private:');
+    console.log('');
+    console.log('  $ realmethods_cli resource_publish ./some_path/Dockerfile myFirstDockerFile DOCKERFILE ');
+    console.log('');
+    console.log('Example to publish a model as public:');
+    console.log('');
+    console.log('  $ realmethods_cli resource_publish ./some_path/config.yml myFirstCircleCIConfigYAML CI_CONFIG public');
+    console.log('');
+    
+});
+
+program
+.command('resource_download <resource_id> <output_file_path>')
+.description('Download a resource file.  Only owned or public models can be downloaded.' )
+.action(function(resource_id, output_file_path){
+	realmethods.downloadResource(resource_id, output_file_path)
+		.then(function(data){
+			console.log(data);
+		}).catch(err => console.log(err));
+}).on('--help', function() {
+    console.log('');
+    console.log('Example to download a resource with id of 2:');
+    console.log('');
+    console.log('  $ realmethods_cli resource_download 2 ./tmp/archive/mymodel.xmi');
+    
+});
+
+program
+.command('resource_promote <name_or_id>')
+.description('Promote an owned resource from private scope to public.')
+.action(async function(name_or_id){
+	var confirm = await inquirer.confirmation();		// ask for confirmation;
+	if ( confirm.query == true )
+		realmethods.promoteResource(name_or_id)
+			.then(function(data){
+				console.log(data);
+		}).catch(err => console.log(err));
+}).on('--help', function() {
+    console.log('');
+    console.log('Example to promote a resource referenced by id=1000:');
+    console.log('');
+    console.log('  $ realmethods_cli resource_promote 1000');    
+});
+
+program
+.command('resource_demote <name_or_id>')
+.description('Demote an owned resource from public scope to private.')
+.action(async function(name_or_id){
+	var confirm = await inquirer.confirmation();		// ask for confirmation;
+	if ( confirm.query == true )
+		realmethods.demoteResource(name_or_id)
+			.then(function(data){
+				console.log(data);
+			}).catch(err => console.log(err));
+}).on('--help', function() {
+    console.log('');
+    console.log('Example to demote a resource referenced by id=1000:');
+    console.log('');
+    console.log('  $ realmethods_cli model_resource 1000');    
+});
+
+program
+.command('resource_delete <name_or_id>')
+.description('Delete a resource using its name or id.  Can only delete an owned private resource.')
+.action(async function(name_or_id){
+	var confirm = await inquirer.confirmation();		// ask for confirmation;
+	if ( confirm.query == true )
+		realmethods.deleteResource(name_or_id)
+			.then(function(data){
+				console.log(data);
+			}).catch(err => console.log(err));				
+}).on('--help', function() {
+    console.log('');
+    console.log('Example to delete a resource referenced by name:');
+    console.log('');
+    console.log('  $ realmethods_cli resource_delete my_resource_name');    
+});
 
 ////////////////////////////////////////////////////
 // app related options
@@ -475,10 +614,10 @@ program
 });
 
 program
-.command('app_delete <id>')
+.command('app_delete <name_or_id>')
 .description('Delete a previously generated app.  Can only delete an owned private app.')
-.action(function(id){
-	realmethods.deleteApp(id)
+.action(function(name_or_id){
+	realmethods.deleteApp(name_or_id)
 		.then(function(data){
 			console.log(data);
 	}).catch(err => console.log(err));
@@ -490,10 +629,10 @@ program
 });
 
 program
-.command('app_promote <id>')
+.command('app_promote <name_or_id>')
 .description('Promote an owned application from private scope to public.')
-.action(function(id){
-	realmethods.promoteApp(id)
+.action(function(name_or_id){
+	realmethods.promoteApp(name_or_id)
 		.then(function(data){
 			console.log(data);
 	}).catch(err => console.log(err));
@@ -507,10 +646,10 @@ program
 });
 
 program
-.command('app_demote <id>')
+.command('app_demote <name_or_id>')
 .description('Demote an owned application from public scope to private.')
-.action(function(id){
-	realmethods.demoteApp(id)
+.action(function(name_or_id){
+	realmethods.demoteApp(name_or_id)
 		.then(function(data){
 			console.log(data);
 	}).catch(err => console.log(err));
@@ -579,6 +718,12 @@ program
     
 });
 
+program
+  .command('*')
+  .action(function(env){
+    console.log('no support for command "%s"', env);
+  });
+  
 program.parse(process.argv);
 
 
