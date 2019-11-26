@@ -506,7 +506,7 @@ program
     console.log('');
     console.log('Example to download a resource with id of 2:');
     console.log('');
-    console.log('  $ realmethods_cli resource_download 2 ./tmp/archive/mymodel.xmi');
+    console.log('  $ realmethods_cli resource_download 2 ./tmp/archive/Dockerfile');
     
 });
 
