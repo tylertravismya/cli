@@ -102,10 +102,10 @@ program
 						tbl.push( 
 								[
 									models[index].id, 
-									saveParams.name, 
+									models[index].fileName, 
 									saveParams.description, 
 									models[index].contributor,
-									models[index].modelType,
+//									models[index].modelType,
 									models[index].scopeType
 								]);
 				}
@@ -595,15 +595,17 @@ program
     console.log('');
 });
 
-
 program
 .command('app_download <app_id> <output_file_path>')
 .description('Download an application ZIP file archived.  Only owned or public apps can be downloaded.' )
 .action(function(app_id, output_file_path){
+console.log('function deprecated');
+/*	
 	realmethods.downloadApp(app_id, output_file_path)
 		.then(function(data){
 			console.log(data);
 	}).catch(err => console.log(err));
+*/
 
 }).on('--help', function() {
     console.log('');
@@ -617,10 +619,13 @@ program
 .command('app_delete <name_or_id>')
 .description('Delete a previously generated app.  Can only delete an owned private app.')
 .action(function(name_or_id){
+console.log('function deprecated');
+/*	
 	realmethods.deleteApp(name_or_id)
 		.then(function(data){
 			console.log(data);
 	}).catch(err => console.log(err));
+*/
 }).on('--help', function() {
     console.log('');
     console.log('Example to delete an app:');
@@ -632,10 +637,13 @@ program
 .command('app_promote <name_or_id>')
 .description('Promote an owned application from private scope to public.')
 .action(function(name_or_id){
+console.log('function deprecated');
+/*
 	realmethods.promoteApp(name_or_id)
 		.then(function(data){
 			console.log(data);
 	}).catch(err => console.log(err));
+*/
 }).on('--help', function() {
     console.log('');
     console.log('Promote an owned applicaton from private scope to public.');
@@ -649,10 +657,13 @@ program
 .command('app_demote <name_or_id>')
 .description('Demote an owned application from public scope to private.')
 .action(function(name_or_id){
+console.log('function deprecated');
+/*
 	realmethods.demoteApp(name_or_id)
 		.then(function(data){
 			console.log(data);
 	}).catch(err => console.log(err));
+*/
 }).on('--help', function() {
     console.log('');
     console.log('Demote an owned applicaton from public scope to private.');
@@ -667,6 +678,8 @@ program
 .description('List previously generated apps that have been archive. Scope: public, private, community. Empty returns all.')
 .option('-o, --output [type]', '[json] or pretty for pretty print')
 .action(function(scope, options){
+console.log('function deprecated');
+/*
 	realmethods.listApps(scope)
 	.then(function(data) {
 		var archives = JSON.parse(data.result);
@@ -698,6 +711,7 @@ program
 		} 
 		
 	})
+*/	
 }).on('--help', function() {
     console.log('');
     console.log('Example to display all community archived apps using pretty print:');
