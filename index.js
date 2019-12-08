@@ -618,14 +618,11 @@ console.log('function deprecated');
 program
 .command('app_delete <name_or_id>')
 .description('Delete a previously generated app.  Can only delete an owned private app.')
-.action(function(name_or_id){
-console.log('function deprecated');
-/*	
+.action(async function(name_or_id){
 	realmethods.deleteApp(name_or_id)
 		.then(function(data){
 			console.log(data);
 	}).catch(err => console.log(err));
-*/
 }).on('--help', function() {
     console.log('');
     console.log('Example to delete an app:');
@@ -636,14 +633,11 @@ console.log('function deprecated');
 program
 .command('app_promote <name_or_id>')
 .description('Promote an owned application from private scope to public.')
-.action(function(name_or_id){
-console.log('function deprecated');
-/*
+.action(async function(name_or_id){
 	realmethods.promoteApp(name_or_id)
 		.then(function(data){
 			console.log(data);
 	}).catch(err => console.log(err));
-*/
 }).on('--help', function() {
     console.log('');
     console.log('Promote an owned applicaton from private scope to public.');
@@ -656,14 +650,11 @@ console.log('function deprecated');
 program
 .command('app_demote <name_or_id>')
 .description('Demote an owned application from public scope to private.')
-.action(function(name_or_id){
-console.log('function deprecated');
-/*
+.action(async function(name_or_id){
 	realmethods.demoteApp(name_or_id)
 		.then(function(data){
 			console.log(data);
 	}).catch(err => console.log(err));
-*/
 }).on('--help', function() {
     console.log('');
     console.log('Demote an owned applicaton from public scope to private.');
@@ -678,8 +669,6 @@ program
 .description('List previously generated apps that have been archive. Scope: public, private, community. Empty returns all.')
 .option('-o, --output [type]', '[json] or pretty for pretty print')
 .action(function(scope, options){
-console.log('function deprecated');
-/*
 	realmethods.listApps(scope)
 	.then(function(data) {
 		var archives = JSON.parse(data.result);
@@ -711,7 +700,6 @@ console.log('function deprecated');
 		} 
 		
 	})
-*/	
 }).on('--help', function() {
     console.log('');
     console.log('Example to display all community archived apps using pretty print:');
