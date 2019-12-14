@@ -105,7 +105,7 @@ program
 									models[index].fileName, 
 									saveParams.description, 
 									models[index].contributor,
-//									models[index].modelType,
+									models[index].modelType,
 									models[index].scopeType
 								]);
 				}
@@ -151,10 +151,15 @@ program
 });
 
 program
-.command('model_publish <model_or_yaml_file> [scope] [javaRootPackageName]')
-.description('Publish a model file or use a YAML with appropriate directives. Scope: public or private[default]. javaRootPackageName: For JAR/EAR files only' )
-.action(function(model_or_yaml_file, scope){
-	realmethods.registerModel(model_or_yaml_file, scope, javaRootPackageName)
+.command('model_publish <model_file> [scope] [javaRootPackageName] [primaryKeyPattern]')
+.description('Publish a model file or use a YAML with appropriate directives. Scope: public or private[default]. javaRootPackageNames: comma delim list of packages to consider, for Git Repos and JAR/WAR/EAR files only, primaryKeyPattern: POJO pk patttern, defaults to _pojoName_Id' )
+.action(function(model_file, scope, javaRootPackageName, primaryKeyPattern){
+    if ( primaryKeyPattern == undefined ||  primaryKeyPattern.length == 0 )
+		primaryKeyPattern = "_pojoName_Id";
+	var array;
+	if ( javaRootPackageName != undefined && javaRootPackageName.length > 0 )
+	    array = javaRootPackageName.split(",")
+	realmethods.registerModel(model_file, scope, array, primaryKeyPattern)
 		.then(function(data) {
 			console.log(data);
 		}).catch(err => console.log(err));
