@@ -151,14 +151,15 @@ program
 });
 
 program
-.command('model_publish <model_file> [scope] [javaRootPackageName] [primaryKeyPattern]')
+.command('model_publish <model_file> [javaRootPackageName] [primaryKeyPattern] [scope]')
 .description('Publish a model file or use a YAML with appropriate directives. Scope: public or private[default]. javaRootPackageNames: comma delim list of packages to consider, for Git Repos and JAR/WAR/EAR files only, primaryKeyPattern: POJO pk patttern, defaults to _pojoName_Id' )
-.action(function(model_file, scope, javaRootPackageName, primaryKeyPattern){
+.action(function(model_file, javaRootPackageName, primaryKeyPattern, scope){
     if ( primaryKeyPattern == undefined ||  primaryKeyPattern.length == 0 )
 		primaryKeyPattern = "_pojoName_Id";
 	var array;
 	if ( javaRootPackageName != undefined && javaRootPackageName.length > 0 )
 	    array = javaRootPackageName.split(",")
+	    
 	realmethods.registerModel(model_file, scope, array, primaryKeyPattern)
 		.then(function(data) {
 			console.log(data);
@@ -434,7 +435,7 @@ program
 .command('resource_list [scope]')
 .description('List available resources. Scope: public, private, community. Empty returns all.')
 .option('-o, --output [value]', '[json] or pretty for pretty print')
-.option('-t, --type [value]', 'GENERIC, DOCKERFILE, CI_CONFIG, TERRAFORM')
+.option('-t, --type [value]', 'GENERIC [default], DOCKERFILE, CI_CONFIG, TERRAFORM, PROJECT_AS_CODE')
 .action(function(scope, options){
 	realmethods.listResources(scope, options.type)
 		.then(function(data) {
