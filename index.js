@@ -24,7 +24,7 @@ var program = require('commander');
 
 program
 .version('0.2.13', '-v, --version')
-.option('-q, --quiet <arg>', 'true or [false] to minimize output to only results.');
+.option('-q, --quiet [arg]', 'true or [false] to minimize output to only results.', 'false');
 
 program
 .command('init [token] [hostUrl]')
@@ -93,8 +93,8 @@ program
 			var models = JSON.parse(data.result);
 			if ( options.output == constants.PRETTY_PRINT_OUTPUT) {
 				const tbl 		= new Table({
-											head: ['id', 'name', 'description', 'contributor', 'type', 'scope'], 
-											colWidths: [10, 30, 30, 25, 15, 15]
+											head: ['id', 'name', 'description', 'file', 'contributor', 'type', 'scope'], 
+											colWidths: [10, 20, 30, 25, 25, 15, 15]
 										});
 				var saveParams;
 				for(var index = 0; index < models.length; index++ ) {
@@ -102,8 +102,9 @@ program
 						tbl.push( 
 								[
 									models[index].id, 
-									models[index].fileName, 
+									saveParams.name,
 									saveParams.description, 
+									models[index].fileName, 
 									models[index].contributor,
 									models[index].modelType,
 									models[index].scopeType
@@ -197,12 +198,14 @@ program
 .command('model_promote <name_or_id>')
 .description('Promote an owned model from private scope to public.')
 .action(async function(name_or_id){
-	var confirm = await inquirer.confirmation();		// ask for confirmation;
+	var confirm = await inquirer.confirmation(program.quiet);		// ask for confirmation;
 	if ( confirm.query == true )
 		realmethods.promoteModel(name_or_id)
 			.then(function(data){
 				console.log(data);
 		}).catch(err => console.log(err));
+	else
+		console.log( confirm );
 }).on('--help', function() {
     console.log('');
     console.log('Example to promote a model referenced by id=1000:');
@@ -214,7 +217,7 @@ program
 .command('model_demote <name_or_id>')
 .description('Demote an owned model from public scope to private.')
 .action(async function(name_or_id){
-	var confirm = await inquirer.confirmation();		// ask for confirmation;
+	var confirm = await inquirer.confirmation(program.quiet);		// ask for confirmation;
 	if ( confirm.query == true )
 		realmethods.demoteModel(name_or_id)
 			.then(function(data){
@@ -231,7 +234,7 @@ program
 .command('model_delete <name_or_id>')
 .description('Delete a model.  Can only delete an owned private model.')
 .action(async function(name_or_id){
-	var confirm = await inquirer.confirmation();		// ask for confirmation;
+	var confirm = await inquirer.confirmation(program.quiet);		// ask for confirmation;
 	if ( confirm.query == true )
 		realmethods.deleteModel(name_or_id)
 			.then(function(data){
@@ -374,7 +377,7 @@ program
 .command('stack_promote <name_or_id>')
 .description('Promote an owned tech stack from private scope to public.')
 .action(async function(name_or_id){
-	var confirm = await inquirer.confirmation();		// ask for confirmation;
+	var confirm = await inquirer.confirmation(program.quiet);		// ask for confirmation;
 	if ( confirm.query == true ) {
 		realmethods.promoteStack(name_or_id)
 			.then(function(data){
@@ -394,7 +397,7 @@ program
 .command('stack_demote <name_or_id>')
 .description('Demote an owned tech stack from public scope to private.')
 .action(async function(name_or_id){
-	var confirm = await inquirer.confirmation();		// ask for confirmation;
+	var confirm = await inquirer.confirmation(program.quiet);		// ask for confirmation;
 	if ( confirm.query == true ) {
 		realmethods.demoteStack(name_or_id)
 			.then(function(data){
@@ -413,8 +416,8 @@ program
 .command('stack_delete <name_or_id>')
 .description('Delete a tech stack.  Can only delete an owned private tech stack.')
 .action(async function(name_or_id){
-	var confirm = await inquirer.confirmation();		// ask for confirmation;
-	if ( confirm.confirm == true ) {
+	var confirm = await inquirer.confirmation(program.quiet);		// ask for confirmation;
+	if ( confirm.query == true ) {
 		realmethods.deleteStack(name_or_id)
 			.then(function(data){
 				console.log(data);
@@ -439,29 +442,29 @@ program
 .action(function(scope, options){
 	realmethods.listResources(scope, options.type)
 		.then(function(data) {
-			var models = JSON.parse(data.result);
+			var resources = JSON.parse(data.result);
 			if ( options.output == constants.PRETTY_PRINT_OUTPUT) {
 				const tbl 		= new Table({
-											head: ['id', 'name', 'description', 'contributor', 'type', 'scope'], 
-											colWidths: [10, 30, 30, 25, 15, 15]
+											head: ['id', 'name', 'file', 'contributor', 'type', 'scope'], 
+											colWidths: [10, 50, 50, 30, 25, 15]
 										});
 				var saveParams;
-				for(var index = 0; index < models.length; index++ ) {
-					saveParams = JSON.parse(models[index].saveParams);
+				for(var index = 0; index < resources.length; index++ ) {
+					saveParams = JSON.parse(resources[index].saveParams);
 						tbl.push( 
 								[
-									models[index].id, 
+									resources[index].id, 
 									saveParams.name, 
-									saveParams.description, 
-									models[index].contributor,
-									models[index].resourceType,
-									models[index].scopeType
+									resources[index].fileName, 
+									resources[index].contributor,
+									resources[index].resourceType,
+									resources[index].scopeType
 								]);
 				}
 				console.log(tbl.toString());
 			}
 			else {
-					console.log(models);
+					console.log(resources);
 			} 
 	}).catch(err => console.log(err));
 	
@@ -520,7 +523,7 @@ program
 .command('resource_promote <name_or_id>')
 .description('Promote an owned resource from private scope to public.')
 .action(async function(name_or_id){
-	var confirm = await inquirer.confirmation();		// ask for confirmation;
+	var confirm = await inquirer.confirmation(program.quiet);		// ask for confirmation;
 	if ( confirm.query == true )
 		realmethods.promoteResource(name_or_id)
 			.then(function(data){
@@ -537,7 +540,7 @@ program
 .command('resource_demote <name_or_id>')
 .description('Demote an owned resource from public scope to private.')
 .action(async function(name_or_id){
-	var confirm = await inquirer.confirmation();		// ask for confirmation;
+	var confirm = await inquirer.confirmation(program.quiet);		// ask for confirmation;
 	if ( confirm.query == true )
 		realmethods.demoteResource(name_or_id)
 			.then(function(data){
@@ -554,7 +557,7 @@ program
 .command('resource_delete <name_or_id>')
 .description('Delete a resource using its name or id.  Can only delete an owned private resource.')
 .action(async function(name_or_id){
-	var confirm = await inquirer.confirmation();		// ask for confirmation;
+	var confirm = await inquirer.confirmation(program.quiet);		// ask for confirmation;
 	if ( confirm.query == true )
 		realmethods.deleteResource(name_or_id)
 			.then(function(data){
@@ -724,6 +727,50 @@ program
     console.log('');
     console.log('  $ realmethods_cli app_list community -o pretty');
     
+});
+
+////////////////////////////////////////////////////
+// app related options
+////////////////////////////////////////////////////
+
+program
+.command('project_generate <yaml_file>')
+.description('Generates an project using the directives of a YAML file.')
+.action(function(yaml_file){
+
+	var gitFile 		=  null; 
+	var optionsFile 	=  null;
+	var modelIdentifier =  null;
+		
+	realmethods.generateApp(yaml_file, gitFile, optionsFile, modelIdentifier)
+		.then(function(data){
+			console.log(data);
+	}).catch(err => console.log(err)); 
+}).on('--help', function() {
+    console.log('');
+    console.log('');
+    console.log('Example to generate an project using the directives of a YAML file:');
+    console.log('');
+    console.log('  $ realmethods_cli app_generate ./sample.yamls/generate.apps.yml');
+    console.log('');
+});
+
+program
+.command('project_save <yaml_file>')
+.description('Saves as a project.')
+.action(function(yaml_file, options){
+	realmethods.saveProject(yaml_file)
+		.then(function(data){
+			console.log(data);
+	}).catch(err => console.log(err)); 
+}).on('--help', function() {
+    console.log('');
+    console.log('');
+    console.log('Example to save as  project:');
+    console.log('');
+    console.log('  $ realmethods_cli project_save ./sample.yamls/generate.apps.yml');
+    console.log('');
+    console.log('');
 });
 
 program

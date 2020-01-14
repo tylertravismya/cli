@@ -14,6 +14,8 @@
 #
 
 project:
+    name: Spark Micro Java Web Demo
+    description: Sample Spark Microweb Hibernate project      
     techstack:
        id:                SparkMicroWeb  # options: ASPNETCore, LambdaNoSQL, Lambda, Angular7MongoDB, Django, GoogleFunctions
                                          #          SparkMicroWeb, SpringCore, SpringMongoDB, Struts2, Apollo
@@ -21,7 +23,8 @@ project:
                                          #     realmethods_cli stack_list --output pretty
 
     model:
-       identifier:		  4           # options:     Unique id of an existing model or 
+        identifier:       255
+                                      # options:     Unique id of an existing model or 
                                       #              full or relative path to a model file of a supported type
                                       # model types: UML, Eclipse Modeling Framework, JSON, SQL Script, JAR, EAR
                                       # To see the list of available model on a realMethods instance using command:

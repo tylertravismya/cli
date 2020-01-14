@@ -14,6 +14,8 @@
 #
 
 project:
+    name: Struts2 Demo
+    description: Sample Struts2 Hibernate project    
     techstack:
        id:                Struts2     # options: ASPNETCore, LambdaNoSQL, Lambda, Angular7MongoDB, Django, GoogleFunctions
                                       #          SparkMicroWeb, SpringCore, SpringMongoDB, Struts2, Apollo
@@ -21,7 +23,8 @@ project:
                                       #     realmethods_cli stack_list --output pretty
 
     model:
-       identifier:		  4           # options:     Unique id of an existing model or 
+        identifier:        255
+                                      # options:     Unique id of an existing model or 
                                       #              full or relative path to a model file of a supported type
                                       # Model types: UML, Eclipse Modeling Framework, JSON, SQL Script, JAR, EAR
                                       # To see the list of available model on a realMethods instance using command:

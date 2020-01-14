@@ -14,6 +14,8 @@
 #
 
 project:
+    name: Google Functions Serverless Demo
+    description: Sample Google Functions Serverless project      
     techstack:
        id:                GoogleFunctions   # options: ASPNETCore, LambdaNoSQL, Lambda, Angular7MongoDB, Django, GoogleFunctions
                                             #          SparkMicroWeb, SpringCore, SpringMongoDB, Struts2, Apollo
@@ -21,8 +23,8 @@ project:
                                             #     realmethods_cli stack_list --output pretty
 
     model:
-       identifier:		  4           # options:     Unique id of an existing model or 
-                                      #              full or relative path to a model file of a supported type
+        identifier:       255
+                                    #              full or relative path to a model file of a supported type
                                       # model types: UML, Eclipse Modeling Framework, JSON, SQL Script, JAR, EAR
                                       # To see the list of available model on a realMethods instance using command:
                                       #      realmethods_cli model_list --output pretty
